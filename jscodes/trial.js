@@ -50,3 +50,29 @@ return ans
 console.log(sum(44,33,11,44,55,66,74,13));
 
 // next topic ARROW functions
+//what varies lets see now
+
+const hey=()=>
+{
+    console.log("How are you")
+}
+
+hey();
+
+
+
+let data=()=>
+{
+    let val=33;
+    console.log(val)
+}
+
+data();
+// console.log(val)
+
+
+
+
+let lol=()=>{
+    console.log(hahaa)
+}
