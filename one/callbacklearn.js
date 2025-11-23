@@ -1,86 +1,165 @@
-// // function checkinventory()
+// // // function checkinventory()
+// // // {
+// // //     setTimeout(()=>{console.log("Cheking inventory")},3000)
+// // // }
+// // // function Createorder()
+// // // {
+// // //     console.log('Creating the order')
+// // // }
+
+// // // function confirmthePayment()
+// // // {
+// // //     console.log('Confirming the payment')
+// // // }
+
+
+// // // function main()
+// // // {
+// // //     checkinventory()
+// // //     Createorder()
+// // //     confirmthePayment()
+
+// // // }
+// // // main()
+
+
+
+
+
+
+
+
+// // function calc (data, newfun)
 // // {
-// //     setTimeout(()=>{console.log("Cheking inventory")},3000)
+// //     newfun();
+
 // // }
-// // function Createorder()
+
+// // newfun()
 // // {
-// //     console.log('Creating the order')
+// //     console.log('from callback')
 // // }
 
-// // function confirmthePayment()
+// // Hello(20,callback)
+
+
+
+
+// // function greet(data, helloo)
 // // {
-// //     console.log('Confirming the payment')
+
+// //     console.log(data);
+// //     helloo();
+
 // // }
-
-
-// // function main()
+// // function intro()
 // // {
-// //     checkinventory()
-// //     Createorder()
-// //     confirmthePayment()
-
+// //     console.log(`hello`)
 // // }
-// // main()
+
+
+// // greet('omkar',intro)
 
 
 
 
+// // const nums = [1, 2, 3];
+// // for (let i = 0; i < nums.length; i++) {
+// //   console.log(nums[i] * 2);
+// // }
 
 
-
-
-// function calc (data, newfun)
-// {
-//     newfun();
-
-// }
-
-// newfun()
-// {
-//     console.log('from callback')
-// }
-
-// Hello(20,callback)
-
-
-
-
-function greet(data, helloo)
-{
-
-    console.log(data);
-    helloo();
-
-}
-function intro()
-{
-    console.log(`hello`)
-}
-
-
-greet('omkar',intro)
-
-
-
-
-const nums = [1, 2, 3];
-// for (let i = 0; i < nums.length; i++) {
-//   console.log(nums[i] * 2);
-// }
-
-
-// array.forEach(element => {
+// // array.forEach(element => {
     
+// // });
+
+// // nums.forEach(ele=>{
+// //     console.log(ele)
+// // })
+
+// // nums.forEach(function prinnt(num)
+// // {
+// // console.log(num)
+// // })
+
+
+// // dotwice Practice cb
+
+
+// function CB(printt)
+// {
+//     console.log('Before')
+// printt()
+// printt()
+// console.log('After')
+// }
+
+// // function twice()
+// // {
+// //     console.log('hi')
+// // }
+
+// // CB(twice);
+
+
+
+
+
+
+
+// CB(()=>
+// {
+//     console.log('hi')
+// })
+
+
+
+// // upper/lowercase
+
+
+
+
+// function printEvenNumbers(numbers,even) {
+// numbers.forEach(ele => {
+//         if (numbers[ele] % 2 === 0) {
+//       console.log(numbers[ele]);
+//     }
 // });
 
-nums.forEach(ele=>{
-    console.log(ele)
-})
+// }
 
-nums.forEach(function prinnt(num)
+// printEvenNumbers([1, 2, 3, 4, 5, 6]);
+
+
+
+// printEvenNumbers(arr,()=>
+// {
+
+// })
+// let arr=[1, 2, 3, 4, 5, 6];
+
+
+
+function greet(name,lang) {
+    lang(name)
+  console.log("Hello, " + name);
+}
+
+function EnglishGreeting(name)
 {
-console.log(num)
-})
+    console.log('Hello'+ name)
+}
+
+function JapaneseGreetng(name)
+{
+    console.log('Konnichiwa'+ name)
+}
 
 
-// dotwice Practice cb
+greet('omkar',EnglishGreeting);
+greet('omkar',JapaneseGreetng)
+
+greet('omkar', ()=>Indiangreeting)
+
+
+
