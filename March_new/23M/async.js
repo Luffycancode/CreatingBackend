@@ -7,5 +7,6 @@ fs.readFile(path,'utf8',(err,data)=>
     {
         console.log('err')
     }
+    console.log('Hey from inside')
 })
 console.log(`${Date.now()-before}`)
