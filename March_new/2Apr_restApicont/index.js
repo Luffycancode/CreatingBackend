@@ -7,14 +7,14 @@ app.get('/',(req,res)=>
     res.send('Pixel')
 })
 
-app.get('/api/v1/courses',(req,res)=>
-{
-    // res.send(courses)
-    let offset=req.query.offset
-    let limit=req.query.limit
-    res.send(`Offset is ${offset} and limit is ${limit} and courses are ${JSON.stringify(courses)}`)
-    console.log(req.query)
-})
+// app.get('/api/v1/courses',(req,res)=>
+// {
+//     // res.send(courses)
+//     let offset=req.query.offset
+//     let limit=req.query.limit
+//     res.send(`Offset is ${offset} and limit is ${limit} and courses are ${JSON.stringify(courses)}`)
+//     console.log(req.query)
+// })
 
 // app.get('/api/v1/courses',(req,res)=>
 // {
@@ -27,6 +27,22 @@ app.get('/api/v1/courses',(req,res)=>
 //     res.send(courses)
 // })
 
+
+
+//Learning about PathParmeters
+
+
+
+app.get('/api/v1/courses/:courseid',(req,res)=>
+{
+    // res.send(courses)
+    // let offset=req.query.offset
+    // let limit=req.query.limit
+    // res.send(`Offset is ${offset} and limit is ${limit} and courses are ${JSON.stringify(courses)}`)
+    let data=req.params.courseid
+    res.send(courses[data])
+    console.log(typeof(req.params.courseid))
+})
 
 
 app.listen('3000',()=>
