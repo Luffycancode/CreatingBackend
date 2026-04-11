@@ -66,7 +66,14 @@
 let arr=['Apple','Sitaphal','Mango','Dragon']
 
 
-// let fruit=arr.find((item)=>item=='Dragon'). 
+let fruit=arr.find((item)=>item=='Dragon')
+// or
+
+// let fruit=arr.find((item)=>
+//     {
+//        return item=='Dragon'
+//     })
+
 //Equal to
 // let fruit=arr.find(function(item)
 // {

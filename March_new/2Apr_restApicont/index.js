@@ -39,10 +39,33 @@ app.get('/api/v1/courses/:courseid',(req,res)=>
     // let offset=req.query.offset
     // let limit=req.query.limit
     // res.send(`Offset is ${offset} and limit is ${limit} and courses are ${JSON.stringify(courses)}`)
-    let data=req.params.courseid
-    res.send(courses[data])
-    console.log(typeof(req.params.courseid))
+
+
+// Writing logic with array find method. If found then output display or show server side error! 
+// eg-> const fruit= fruits.find((item)=>item=='Apple')
+    // let data=req.params.courseid
+
+    const course = courses.find((item)=>item.id===parseInt(req.params.courseid))
+    if(!course)
+    {
+        return res.status(404).send('Course is not present')
+    }
+    else
+    {
+        res.send(course)
+    }
+
+
+    // res.send(courses[data])
+    // console.log(typeof(req.params.courseid))
+
+
 })
+
+//Post Api endpoint now
+
+
+
 
 
 app.listen('3000',()=>
