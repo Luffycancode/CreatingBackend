@@ -2,6 +2,11 @@ const express= require('express');
 
 const app=express();
 
+
+// Main middlware using app.get which is global to all
+
+app.use(express.json())
+
 app.get('/',(req,res)=>
 {
     res.send('Pixel')
@@ -20,6 +25,13 @@ app.get('/',(req,res)=>
 // {
 //     console.log(req.query)
 // })
+
+app.get('/api/v1/courses',(req,res)=>
+{
+    res.send('From courses')
+})
+
+
 
 
 // app.get('/api/v1/courses',(req,res)=>
@@ -66,6 +78,21 @@ app.get('/api/v1/courses/:courseid',(req,res)=>
 
 
 
+
+
+
+//Implenting post API endpoint now
+// Using the postman plugin getting the post request! 
+
+
+// post v1/courses{Body}
+
+
+app.post('/api/v1/courses',(req,res)=>
+{
+    console.log(req.body)
+    res.send('Course created')
+})
 
 
 app.listen('3000',()=>
