@@ -13,8 +13,17 @@ next()
 }
 
 
+//adding 2nd logger as middleware so basically there are 2 middlwares
 
-app.get('/',logger,(req,res)=>
+
+const logger2=(req,res,next)=>
+{
+console.log('In 2nd logger now')
+next()
+}
+
+
+app.get('/',[logger,logger2],(req,res)=>
 {
 res.send('On root path')
 })
