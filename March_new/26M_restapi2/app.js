@@ -15,7 +15,7 @@ app.listen(3000,()=>
 {
     console.log('Running on 3000')
 })
-
+// ServerUpdates
 app.get('/',(req,res)=>
 {
     res.send('hello');
