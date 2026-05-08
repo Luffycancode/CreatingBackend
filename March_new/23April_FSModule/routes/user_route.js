@@ -17,27 +17,27 @@ res.send("On gym homepage")
 })
 
 
-router.get('/api/v1/users',(req,res)=>
-{
-    const data =req.query;
-    console.log(data)
-    const searchedgender=data.gender
-    // console.log(searchedgender)
+// router.get('/api/v1/users',(req,res)=>
+// {
+//     const data =req.query;
+//     console.log(data)
+//     const searchedgender=data.gender
+//     // console.log(searchedgender)
 
-    // const filterdata= users.filter((i)=>i.gender==='Male')
-    // console.log(filterdata)
+//     // const filterdata= users.filter((i)=>i.gender==='Male')
+//     // console.log(filterdata)
 
-    // res.send(filterdata)
+//     // res.send(filterdata)
 
 
-    const filterdata=users.filter((i)=>
-    {
-        if(i.gender==='Male')
-        {
-            return true
-        }
-            return false
-    })
+//     const filterdata=users.filter((i)=>
+//     {
+//         if(i.gender==='Male')
+//         {
+//             return true
+//         }
+//             return false
+//     })
 
 
     //also you can do it like this
@@ -46,15 +46,15 @@ router.get('/api/v1/users',(req,res)=>
     // data: filterdata,
     // size: filterdata.length
     //                 } and pass the payload obj in res.json
-    res.json(
-        {
-            success: true,
-            data:filterdata,
-            length:filterdata.length
-        }
-    )
+//     res.json(
+//         {
+//             success: true,
+//             data:filterdata,
+//             length:filterdata.length
+//         }
+//     )
 
-})
+// })
 
 
 
