@@ -1,38 +1,22 @@
 const express=require('express')
-// const users = require('./Users'); 
 const server= express()
-// const user_route=require('./routes/user_route')
-const HomeController=require('./controller/Home_Controller')
-const userController=require('./controller/users_Controller')
+require('dotenv').config()
+const PORT= process.env.PORT
+const homeroute=require('./routes/Home_route')
+const userroute=require('./routes/Users_route')
+
+//router logic impplemtation here
+// Here / the common logic seperates use case for routing
+server.use('/',homeroute)
+server.use('/api/v1',userroute)
 
 
 
 
-//seperating logic here
-
-// server.use('/',user_route)
-
-
-
-// Eg of home page routing when used and sent to contoller to control common function
-
-server.get('/home',HomeController)
-server.get('/',HomeController)
-server.get('/api/v1/users',userController.getusergender)
-server.get('/api/v1/users/:userid',userController.getuserid)
-
-
-// server.get('/api/v1/users',)
-
-server.listen(2000,()=>
+server.listen(PORT,()=>
 {
     console.log('Running on 2k')
 })
-
-// server.get('/',(req,res)=>
-// {
-//     res.send('hi')
-// })
 
 
 
@@ -52,12 +36,6 @@ server.listen(2000,()=>
 // Logic
 // Client → Route → Controller → Response
 
-
-
-
-
-
-// Implement controller for data flow
 
 
 
