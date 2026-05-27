@@ -9,7 +9,7 @@ function passwordauthenticate(req,res,next)
 const pass=req.headers.authorization;
 // console.log(pass)
 
-if(pass===PASSWORD)
+if(pass===PASSWORD)  
 {
     next()
 }
