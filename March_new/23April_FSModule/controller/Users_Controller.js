@@ -4,23 +4,49 @@ const users= require('../Users')
 
 function getusergender(req,res)
 {
-    const data =req.query;
-    const searchedgender=data.gender
-    // console.log(searchedgender)
+    const searchedgender=req.query.gender
 
-    const filterdata=users.filter((i)=>
+
+        if(searchedgender)
     {
-        if(i.gender==='Male')
+        if(searchedgender.toLowerCase() === 'male')
         {
-            // return true
-            res.json('Succesfull its a male')
+            return res.json('Yes, it is male');
         }
-        else{
-             res.json('Not male')
+        else
+        {
+            return res.json('Yes, it is female');
         }
-            // return false
+    }
+
+    res.json(users);
+
+    // If there is data for gender then proceed with gender identify else show all users
+    // using if for same
+
+    // if(searchedgender)
+    // {
+    //     const filterdata=users.filter((i)=>
+    // {
+    //     // if(i.gender===searchedgender)
+    //     // {
+    //     //     // return true
+    //     //     return searchedgender
+    //     // }
+    //     // else{
+    //     //      res.json('Not male')
+    //     // }
+    //         // return false
+
+    //         return i.gender===searchedgender
            
-    })
+    // })
+    // }
+    // else
+    //     {
+    //         res.json(users)
+    //     }
+
 }  
 
 
