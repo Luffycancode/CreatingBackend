@@ -14,7 +14,7 @@ function getusergender(req,res)
             return res.json('Yes, it is male');
         }
         else
-        {
+         {
             return res.json('Yes, it is female');
         }
     }
