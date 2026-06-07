@@ -2,12 +2,9 @@ const express= require ('express');
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 const JWT_SECRET=process.env.JWT_SECRET
-// const server= express()
 const UserModel = require ('../Models/User_models')
-// server.use(express.json())
+const bcrypt = require('bcrypt');
 
-
-// const JWT_SECRET = 'mysecretkey';
 
 
 async function loginUser(req,res)
@@ -72,7 +69,9 @@ async function registerUser(req,res)
 const {name,age,username,gender,email} = req.body
 //Creating a new user obj
 
-const newuser = new UserModel({name,age,username,gender,email})
+const Encryptedusername= await bcrypt.hash(username,10)
+
+const newuser = new UserModel({name,age,username:Encryptedusername,gender,email})
 
 
 //Saving in Database-> Two types
