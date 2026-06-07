@@ -1,43 +1,65 @@
 const express= require ('express');
+const jwt = require('jsonwebtoken');
+require('dotenv').config()
+const JWT_SECRET=process.env.JWT_SECRET
 // const server= express()
 const UserModel = require ('../Models/User_models')
 // server.use(express.json())
 
+
+// const JWT_SECRET = 'mysecretkey';
 
 
 async function loginUser(req,res)
 {
 const {email, username}=req.body
 
-const user = await UserModel.findOne({email})
+const user = await UserModel.findOne({email,username})
 if(!user)
 {
     return res.status(401).json(
     {
         success: false,
-        message: 'User not found'
+        message: 'Username or password is wrong'
     })
 }
 else
 {
-    const name = await UserModel.findOne({username})
-    if(!name)
-    {
-        return res.status(401).json(
+    // const Usernamefromdb = await UserModel.findOne({username})
+    // // console.log(Usernamefromdb.username)
+    const token = jwt.sign
+    (
         {
-            success: false,
-            message: 'Wrong Username'
-        })
+            name: username,
+            email: email
+        },
+        JWT_SECRET,
+        {
+            expiresIn: '1h'
+        }
+    );
 
-    }
-    else
-    {
+
+        // console.log(Usernamefromdb)
+        // console.log(username)
+
+    // if(!Usernamefromdb)
+    // {
+    //     return res.status(401).json(
+    //     {
+    //         success: false,
+    //         message: 'Wrong Username'
+    //     })
+    // }
+    // // else
+    // {
         return res.status(200).json(
         {
             success: true,
-            message: 'Login successful'
+            message: 'Login successful',
+            token
         })
-    }
+    // }
 
 }
 
@@ -96,3 +118,6 @@ module.exports={loginUser,registerUser}
 
 
 // module.exports=AuthController;
+
+
+
