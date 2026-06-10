@@ -4,6 +4,7 @@ require('dotenv').config()
 const JWT_SECRET=process.env.JWT_SECRET
 const UserModel = require ('../Models/User_models')
 const bcrypt = require('bcrypt');
+const { decrypt } = require('dotenv');
 
 
 
@@ -11,8 +12,17 @@ async function loginUser(req,res)
 {
 const {email, username}=req.body
 
-const user = await UserModel.findOne({email,username})
-if(!user)
+const user = await UserModel.findOne({email})
+if (!user) {  
+    return res.status(401).json({
+        success: false,
+        message: 'User not found'
+    });
+}
+
+const comparepassword= await bcrypt.compare(username,user.username)
+
+if(comparepassword==false)
 {
     return res.status(401).json(
     {
@@ -50,6 +60,8 @@ else
     // }
     // // else
     // {
+
+
         return res.status(200).json(
         {
             success: true,
