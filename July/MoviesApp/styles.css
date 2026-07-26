@@ -1,0 +1,124 @@
+body
+{
+    background-image: url('the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg');
+    /* opacity: 0.9; */
+}
+
+
+.menu
+{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.MovieName {
+    text-align: left; /* Ensures entered text starts from the left */
+    font-style: italic;
+    font-size: 25px;
+    border-radius: 12px;
+    border: 6px solid #000000;
+    padding: 6px;
+}
+
+.MovieName::placeholder {
+    text-align: center;
+}
+
+.Button {
+    margin-top: 2px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 6px solid #000000;
+    padding: 6px;
+    background-color: #ff0000; 
+    color: white;
+    cursor: pointer;
+}
+
+.MovieDetails
+{
+    text-align: center;
+    font-size: 12px;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    padding: 6px;
+    background-color: #2c0202; 
+    color: white;
+    height: 430px;
+    width: 1100px;
+    margin: 30px auto;
+    display: none;
+}
+
+.movie-card {
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: flex-start;
+
+}
+
+.movie-card img {
+
+    margin-top: 25px;
+
+    width: 250px;
+
+    height: auto;
+
+    border-radius: 10px;
+
+    
+
+
+
+}
+
+
+
+.movie-info {
+    margin-top: 25px;
+    flex: 1;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.movie-info h2 {
+    text-align: left;
+    margin: 0 0 20px 0;
+    color: #e50914;
+    font-size: 36px;
+}
+
+.movie-info p {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.movie-info strong {
+    color: #f5c518;
+}
+
+
+
+.poster-section {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster-section h2 {
+    margin-top: 1px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #222;
+}
