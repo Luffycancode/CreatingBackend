@@ -1,0 +1,15 @@
+
+Time: 7/29/2026, 10:51:59 PM, 
+URL: /, 
+Method: GET, 
+Queryparameters: {"user":"omkar","age":"20"}
+
+Time: 7/29/2026, 10:52:09 PM, 
+URL: /, 
+Method: GET, 
+Queryparameters: {"user":"omkar","gender":"'male'"}
+
+Time: 7/29/2026, 10:53:36 PM, 
+URL: /https://codekaro.notion.site/URL-Parameters-and-HTTP-Methods-17c17cb0f88b80f4987acd10bd47ca8b, 
+Method: GET, 
+Queryparameters: {}
