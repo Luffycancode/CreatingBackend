@@ -1,5 +1,7 @@
 // // Map and filters
 
+// const { use } = require("react")
+
 
 // let array=[1,2,3,4,5,6,7,8,9,10]
 // console.log(array)
@@ -99,21 +101,81 @@
 // Async await
 
 
-async function pizzaorder(PizzainProcess)
+// async function pizzaorder(PizzainProcess)
+// {
+// let result = await PizzainProcess()
+// console.log(result)
+// }
+
+// PizzainProcess=()=>
+// {
+
+//     return new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log('Pizza is ready now')
+//         }, 2000);
+//     })
+
+// }
+// pizzaorder(PizzainProcess)
+
+
+
+// Fetching users example using fetch whihc is kind of promise example
+
+// const users=fetch('https://dummyjson.com/users').then((data)=>
+// {
+//    return data.json()
+// })
+// .then((users)=>
+// {
+//     console.log(users.users[0])
+// })
+// .catch((error)=>
+// {
+// console.log(error)
+// })
+
+
+// console.log(users)
+
+
+// Using async
+
+
+// async function fetchusers()
+// {
+// const response= await fetch('https://dummyjson.com/users')
+// const data= await response.json()
+// console.log(data) 
+
+// }
+
+// fetchusers()
+
+
+
+//A promise Creation
+
+
+const Mypromise = new Promise((res,rej)=>
 {
-let result = await PizzainProcess()
-console.log(result)
-}
-
-PizzainProcess=()=>
+if(false)
 {
-
-    return new Promise((resolve)=>{
-        setTimeout(() => {
-            console.log('Pizza is ready now')
-        }, 2000);
-    })
-
+    res('The pizza is ready')
 }
-pizzaorder(PizzainProcess)
+else
+{
+    rej('Pizza not ready yet, Wait for a while')
+}
+})
+
+
+Mypromise.then((message)=>
+{
+console.log(message)
+}).catch((message)=>
+{
+console.log(message)
+})
 
