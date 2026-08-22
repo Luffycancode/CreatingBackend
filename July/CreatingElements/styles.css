@@ -1,0 +1,111 @@
+.h2
+{
+font-family: Arial, sans-serif;
+font-size: 24px;
+font-weight: bold;
+font-style: italic;
+}
+
+.button
+{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.div
+{
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.dice
+{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    background-color: yellow;
+    justify-content: center;
+    border-radius: 12px;
+    border: 2px solid black;
+    align-items: center;
+    display: flex;
+}
+.spin
+{
+    animation-name: spin;
+    animation-duration: 1s;
+}
+ 
+@keyframes spin {
+    /* from {transform: rotate(0deg);} */
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+
+
+
+.box-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* background-color:black; */
+    height: 18vh;
+}
+.box
+{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    margin: 11px;
+}
+
+.name
+{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+.email
+{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+    border-bottom: 1px solid gray;
+}
+
+
+.UserContainer
+{
+    display: flex;
+    flex-direction: column;  /* each user goes down */
+    width: 400px;
+    margin: 40px auto;
+    gap: 10px;
+}
+
+.Userdetails
+{
+    display: flex;           
+    flex-direction: row;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    gap: 20px;
+}

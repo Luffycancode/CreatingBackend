@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+
+    <div class="div">
+    <h2 class="h2" id="h2">Dice roll game</h2>
+    <div class="dice" id="dice" style="font-size: 25px;">0</div>
+    <button class="button" id="button" onclick="roll()">Role the dice</button>
+    </div>
+
+
+    <div>
+
+    <h2 class="h2" id="h2">Box creation</h2>
+    <!-- <div class="dice" id="dice" style="font-size: 25px;">0</div> -->
+    <button class="button" id="button" onclick="Createbox()">Create a box</button>
+        
+    </div>
+
+
+    <div class="box-container" id="ParentBox">
+        <!-- <div class="box"></div> -->
+        <!-- <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div> -->
+    </div>
+
+
+    <div class="Container">
+    <h2 class="h2" id="h2">Add user details</h2>
+    <div class="details" id="dice">
+        <input type="text" class="name" name="" id="name" placeholder="Username">
+        <input type="email" class="Email" id="email" placeholder="Email">
+    </div>
+    <button class="button" id="button" onclick="AddUser()">Add the user</button>
+    </div>
+
+
+    <div class="UserContainer" id="UserContainer">
+    <div class="Userdetails" id="Userdetails">
+        <p id="DisplayName"> </p>
+        <p id="DisplayEmail"> </p>
+    </div>
+    </div>
+
+
+<link rel="stylesheet" href="styles.css">
+<script src="app.js"></script>
+</body>
+</html>
