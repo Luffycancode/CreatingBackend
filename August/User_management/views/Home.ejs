@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="border-b py-3">
+
+        <div class="flex justify-between max-w-7xl mx-auto">
+
+                    <a href="/" class="text-3xl font-bold ">User Management</a>
+                    <a href="/add-user" class="text-2xl font-bold hover:text-blue-600 underline">Add User</a>
+
+        </div>
+
+
+    </div>
+    
+
+
+
+ <div class="flex flex-col justify-between mt-20 mb-2 items-center justify-center ">
+
+    <div>
+
+
+    <% if (users.length < 1) { %>
+        <h2 class="text-2xl ml-5">No users available</h2>
+        <!-- <button type="submit" class="border-3 bg-amber-50 m-5 px-3 py-2 hover:bg-emerald-500">Add User</button> -->
+            <a href="/add-user" class="inline-block border-3 bg-amber-50 m-5 px-3 py-2 hover:bg-emerald-500">
+                Add User
+            </a>
+    <% } else { %>
+                <div class="flex justify-center m-4">
+                    <h2 class="text-3xl text-clifford text-slate-900 w-[600px]">Manage Users</h2>
+                </div>
+        <% for (let i = 0; i < users.length; i++) { %>
+            <div class="flex gap-5 m-10 items-center w-[600px]">
+            <img src="<%= users[i].image %>" alt="" srcset="" class=" h-17 w-18 rounded-full object-cover">
+
+            <h2><%= users[i].name %></h2>
+            <p><%= users[i].email %></p>
+
+
+                <a href="/Delete/<%=i%>" class="rounded-md m-5 hover:bg-red-500 hover:text-white transition ml-auto text-1xl font-bold">Delete</a>
+                
+            
+            </div>
+        <% } %>
+
+    <% } %>
+
+    </div>
+
+ </div>   
+
+</body>
+</html> 
