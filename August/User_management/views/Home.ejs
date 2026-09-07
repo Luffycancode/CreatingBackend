@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     
@@ -23,20 +24,20 @@
 
 
 
- <div class="flex flex-col justify-between mt-20 mb-2 items-center justify-center ">
+ <div class="flex flex-col justify-between mt-10 mb-2 items-center justify-center ">
 
     <div>
 
 
     <% if (users.length < 1) { %>
-        <h2 class="text-2xl ml-5">No users available</h2>
+        <h2 class="text-2xl ml-5">No users available! Click below to register new user</h2>
         <!-- <button type="submit" class="border-3 bg-amber-50 m-5 px-3 py-2 hover:bg-emerald-500">Add User</button> -->
-            <a href="/add-user" class="inline-block border-3 bg-amber-50 m-5 px-3 py-2 hover:bg-emerald-500">
-                Add User
+            <a href="/add-user" class="inline-block border-3 bg-amber-50 m-5 px-5 py-2 hover:bg-emerald-500 ">
+                Register new user
             </a>
     <% } else { %>
                 <div class="flex justify-center m-4">
-                    <h2 class="text-3xl text-clifford text-slate-900 w-[600px]">Manage Users</h2>
+                    <h2 class="text-3xl text-clifford text-slate-900 w-[600px] mt-1">Manage Users</h2>
                 </div>
         <% for (let i = 0; i < users.length; i++) { %>
             <div class="flex gap-5 m-10 items-center w-[600px]">
@@ -46,7 +47,45 @@
             <p><%= users[i].email %></p>
 
 
-                <a href="/Delete/<%=i%>" class="rounded-md m-5 hover:bg-red-500 hover:text-white transition ml-auto text-1xl font-bold">Delete</a>
+                <!-- <a href="/Delete/<%=i%>" class="rounded-md m-5 hover:bg-red-500 hover:text-white transition ml-auto text-1xl font-bold">Delete</a> -->
+
+                <div class="flex items-center gap-2 ml-auto">
+
+                <form action="/edit" method="post"> 
+
+                <input type="hidden" name="UserId" value="<%= i %>">
+                    
+
+                <button type="submit" class="font-bold px-3 py-2 text-base rounded-md bg-blue-200 hover:bg-blue-500 hover:text-white transition" ">
+                    Edit  <i class="fa-solid fa-pen ml-1"></i>
+                </button>
+
+
+                </form>
+
+
+
+                <form action="/delete" method="post">
+
+                <input type="hidden" name="UserId" value="<%= i %>">
+                    
+
+                <button type="submit" class="font-bold px-3 py-2 text-base rounded-md bg-blue-200 hover:bg-blue-500 hover:text-white transition"">
+                    Delete <i class="fa-solid fa-trash ml-1"></i>
+                </button>
+
+                </form>
+
+                </div>
+<!-- 
+                <button type="submit" class="font-bold px-4 py-1 text-1xl rounded-md  ml-2   bg-red-200 px-4">
+                   
+                    <a href="/edit"> Edit</a>
+
+                </button> -->
+                
+
+
                 
             
             </div>
