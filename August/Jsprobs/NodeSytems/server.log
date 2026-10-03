@@ -1,0 +1,11 @@
+[Thu Sep 24 2026 18:44:22] IP: ::1 | Method: GET | URL: /
+[Sat Sep 26 2026 18:34:41] IP: ::1 | Method: GET | URL: /
+[Sat Sep 26 2026 18:35:03] IP: ::1 | Method: GET | URL: /courses
+[Sat Sep 26 2026 18:35:45] IP: ::1 | Method: GET | URL: /courses/subject?=AI
+[Sat Sep 26 2026 18:37:01] IP: ::1 | Method: GET | URL: /courses/subject?topic=ai
+[Sat Sep 26 2026 18:38:26] IP: ::1 | Method: GET | URL: /courses/?course=ai
+[Sat Sep 26 2026 18:39:06] IP: ::1 | Method: GET | URL: /courses/?course=ai
+[Sat Sep 26 2026 18:51:22] IP: ::1 | Method: GET | URL: /courseNumber=99
+[Sun Sep 27 2026 12:36:05] IP: ::1 | Method: GET | URL: /courseNumber=99
+[Sun Sep 27 2026 12:39:56] IP: ::1 | Method: GET | URL: /courseNumber=99
+[Sun Sep 27 2026 12:40:12] IP: ::1 | Method: GET | URL: /omkar

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+<body class="bg-gray-50 p-4">
+    
+    <!-- Toolbar Component -->
+    <div class="flex items-center justify-between bg-white border border-slate-200 rounded-xl p-4 shadow-sm max-w-7xl mx-auto mt-3">
+        <a href="/" class="text-xl font-bold text-slate-800 tracking-tight">User management</a>
+        <a href="/newuser" class="inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg shadow-sm shadow-indigo-100 hover:shadow-md transition-all duration-150 active:scale-[0.98]">Add new user</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto mt-8 px-4 space-y-3">
+        
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Registered Users</h3>
+
+        <% if (typeof users === 'undefined' || users.length === 0) { %>
+            <!-- Simple Empty State Message -->
+            <div class="p-4 bg-gray-100 border border-dashed border-gray-300 rounded-lg max-w-md text-center text-sm text-gray-500">
+                Currently no users registered.
+            </div>
+        <% } else { %>
+
+            <% for(let i = 0; i < users.length; i++) { %>
+                <!-- User Item Row Wrapper -->
+                <div class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg shadow-sm max-w-md">
+                    <div>
+                        <h2 class="text-sm font-semibold text-gray-900">
+                            <%= users[i].name %>
+                        </h2>
+                        <p class="text-xs text-gray-500 mt-0.5">
+                            <%= users[i].email %>
+                        </p>
+                    </div>
+
+                    <!-- Button Action Group Wrapper -->
+                    <div class="flex items-center space-x-2">
+                        
+                        <!-- 1. EDIT USER FORM -->
+                        <form action="/edituser" method="post" class="inline">
+                            <input type="hidden" name="userid" value="<%= i %>">
+                            <button type="submit" id="edit-btn-<%= i %>" class="inline-flex items-center justify-center px-3 py-1.5 border border-transparent text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 active:bg-indigo-200 rounded-md transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <svg class="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                </svg>
+                                Edit User
+                            </button>
+                        </form>
+
+                        <!-- 2. DELETE USER FORM -->
+                        <form action="/delete" method="post" class="inline">
+                            <input type="hidden" name="userid" value="<%= i %>">
+                            <button type="submit" id="delete-btn-<%= i %>" class="inline-flex items-center justify-center px-3 py-1.5 border border-transparent text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 active:bg-red-200 rounded-md transition-colors duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                <svg class="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                </svg>
+                                Delete
+                            </button>
+                        </form>
+
+                    </div> 
+
+                </div> <!-- FIXED: Re-added this missing layout container closing tag -->
+            <% } %>
+
+        <% } %> 
+
+    </div>
+
+</body>
+</html>

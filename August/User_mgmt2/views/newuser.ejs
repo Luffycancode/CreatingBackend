@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+<body>
+    
+
+<div class="flex items-center justify-between bg-white border border-slate-200 rounded-xl p-4 shadow-sm max-w-7xl mx-auto mt-3">
+
+    <a href="/" class="text-xl font-bold text-slate-800 tracking-tight">User management</a>
+    <a href="/newuser" class="inline-flex items-center justify-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg shadow-sm shadow-indigo-100 hover:shadow-md transition-all duration-150 active:scale-[0.98]">Add new user</a>
+
+</div>
+
+
+
+<div class="max-w-7xl mx-auto mt-10 px-4">
+
+<form action="/newuser" method="post" class="space-y-4">
+
+
+<input type="text" name="name" placeholder="Enter your name" class="block w-full max-w-md px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm" required>
+<input type="email" name="email" placeholder="Enter Email" class="block w-full max-w-md px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm" required>
+
+
+
+<div class="pt-2">
+<button class="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-md shadow-sm transition-colors">
+Create user
+</button>
+</div>
+
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
