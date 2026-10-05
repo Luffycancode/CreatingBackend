@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+
+
+
+    <div class="bg-white border-b">
+
+        <div class="w-[500px] mx-auto flex justify-between items-center py-3">
+
+            <a href="/toDoHome" class="font-semibold text-gray-700">
+                Home
+            </a>
+
+            <form action="/completed" method="post">
+              <button class="text-sm text-blue-500">
+                Completed Items
+              </button>  
+            </form>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="w-[500px] mx-auto mt-10">
+
+        <h2 class="text-2xl font-semibold mb-5">To do list</h2>
+
+        <form action="/toDo" method="post" class="flex gap-2 mb-6">
+
+            <input 
+                type="text" name="title" placeholder="Enter a task"class="border border-gray-300 px-3 py-2 rounded flex-1">
+
+            <button 
+                type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+                Create task
+            </button>
+
+        </form>
+
+
+        <div class="bg-white p-4 rounded">
+
+            <h3 class="font-bold mb-3">Tasks</h3>
+
+            <% for(let i=0; i<todos.length; i++) { %>
+
+            <div class="flex justify-between items-center border-b py-2">
+                <p><%= todos[i].title %></p>
+                <div class="flex gap-2">
+                    <form action="/marked" method="post">
+                        <input type="hidden" name="id" value="<%= todos[i]._id %>">
+                        <button class="text-xs bg-green-500 text-white px-2 py-1 rounded">✓</button>
+                    </form>
+                    
+                    <button class="text-xs bg-blue-500 text-white px-2 py-1 rounded">Edit</button>
+
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="id" value="<%= todos[i]._id %>">
+                        <input type="hidden" name="page" value="home">
+                        <button class="text-xs bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                    </form>
+
+                    
+
+
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
