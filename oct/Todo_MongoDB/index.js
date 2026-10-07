@@ -6,7 +6,9 @@ app.set('view engine', 'ejs');
 // app.use(express.urlencoded({extended:true}))
 app.use(express.urlencoded({ extended: true })); 
 
-mongoose.connect('mongodb+srv://Cluster74999:omkar@backendnode.bauceb8.mongodb.net/Todo?appName=BackendNode').then(()=>{
+
+
+mongoose.connect('mongodb+srv://Cluster74999:omkar@cluster0.i8f1edh.mongodb.net/Todo?appName=Cluster0').then(()=>{
     console.log('Database connected')
     }).catch((err)=>{
         console.log(err)
@@ -45,6 +47,31 @@ app.post('/marked',async(req,res)=>
     let updatedata= await Todo.findByIdAndUpdate(id,{check:true})
     res.redirect('/toDoHome')
 })
+
+
+
+app.post('/Toedit',async(req,res)=>
+{
+    let {id}=req.body
+    let data= await Todo.findById(id)
+    res.render('edit',{data})
+    // res.redirect('/toDoHome')
+
+})
+
+
+
+
+
+
+app.post('/edititem',async(req,res)=>
+{
+    let {edited,id}=req.body
+    let data= await Todo.findByIdAndUpdate(id,{title:edited})
+    res.redirect('/toDoHome')
+
+})
+
 
 
 app.post('/completed',async(req,res)=>
