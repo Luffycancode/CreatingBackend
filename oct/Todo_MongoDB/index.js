@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-mongoose.connect('mongodb+srv://Cluster74999:omkar@cluster0.i8f1edh.mongodb.net/Todo?appName=Cluster0').then(()=>{
+mongoose.connect('mongodb+srv://Cluster74999:unknownpassword@cluster0.i8f1edh.mongodb.net/Todo?appName=Cluster0').then(()=>{
     console.log('Database connected')
     }).catch((err)=>{
         console.log(err)
