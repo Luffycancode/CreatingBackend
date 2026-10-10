@@ -3,7 +3,7 @@ const mongoose= require('mongoose')
 const app= express()
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://Cluster74999:omkar@backendnode.bauceb8.mongodb.net/BackendDatabase?appName=BackendNode')
+mongoose.connect('mongodb+srv://Cluster74999:unknownpassword@backendnode.bauceb8.mongodb.net/BackendDatabase?appName=BackendNode')
 
 
 const userSchema = mongoose.Schema({
