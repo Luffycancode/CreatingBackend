@@ -5,7 +5,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://Cluster74999:omkar@cluster0.i8f1edh.mongodb.net/Todo2?appName=Cluster0').then(()=>{console.log('Connected database')}).catch((err)=>{console.log(err)})
+mongoose.connect('mongodb+srv://Cluster74999:unknownpassword@cluster0.i8f1edh.mongodb.net/Todo2?appName=Cluster0').then(()=>{console.log('Connected database')}).catch((err)=>{console.log(err)})
 
 
 const listSchema=mongoose.Schema({
