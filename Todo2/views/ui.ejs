@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="mt-[15px] max-w-md mx-auto px-5">
+    <h1>To do list</h1>
+
+    <div>
+    <form action="/todoadd" method="post" >
+        <input type="text" name="item" id="item" placeholder="Enter the item" value="" class="border border-gray-400 p-1 rounded">
+        <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition" >Create</button>
+
+        <a href="/Completeditems" class="m-6">Completed items</a>
+        <a href="/toDoList" class="m-6">To complete</a>
+    </form>
+
+    
+    </div>
+
+    <div class="mt-10">
+        <%for(let i=0;i<data.length;i++){%>
+            <div class="flex items-center justify-between border-b py-2">
+                <p class="m-0"><%=data[i].item%></p>
+
+
+                <form action="/completed" method="post" class="m-0 m-0 shrink-0">
+                    <input type="hidden" name="id" value="<%=data[i]._id%>">
+                    <button type="submit" class="bg-red-400 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition w-6 h-6 flex items-center justify-center">✅</button>
+                </form>
+
+                <form action="/delete" method="post" class="m-0 m-0 shrink-0">
+                    <input type="hidden" name="id" value="<%=data[i]._id%>">
+                    <button type="submit" class="bg-red-400 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">Delete</button>
+                </form>
+
+
+
+
+            </div>
+        <%}%>
+    </div>
+
+    </div>
+</body>
+</html>

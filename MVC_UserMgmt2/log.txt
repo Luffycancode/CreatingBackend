@@ -1,0 +1,15 @@
+ Method: POST 
+ Requested_Url: / 
+ Time: 2026-10-10T16:18:55.139Z 
+ Action: Created new user
+
+ Method: GET 
+ Requested_Url: / 
+ Time: 2026-10-10T16:20:21.504Z 
+ Action: Viewed all users
+
+ Method: POST 
+ Requested_Url: / 
+ Time: 2026-10-10T16:22:42.913Z 
+ Action: Created new user
+
