@@ -1,0 +1,5 @@
+Implement the functionality to edit and delete resources.
+
+Then, create a middleware that logs all API requests to a log.txt file. The log should capture the details of every request, including actions such as viewing, creating, editing, and deleting resources. Ensure that each request is appended to the log file in a clear and readable format.
+
+User create, delete, modify, Read! 
