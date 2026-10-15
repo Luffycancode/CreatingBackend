@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductsHomePage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    
+<div class="max-w-6xl mx-auto px-6 py-8">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Our Products</h1>
+            <p class="text-sm text-gray-500 mt-1">Manage your product collection</p>
+        </div>
+
+        <a href="/api/products/addproduct"
+           class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition">
+            + Add Product
+        </a>
+    </div>
+
+    <!-- Products -->
+    <% if (productstoDisplay.length === 0) { %>
+
+        <div class="bg-white p-8 rounded-lg border text-center">
+            <p class="text-gray-500">No products available.</p>
+        </div>
+
+    <% } else { %>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <% for (let i = 0; i < productstoDisplay.length; i++) { %>
+
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+
+                    <img
+                        src="<%= productstoDisplay[i].ProductImageUrl %>"
+                        alt="<%= productstoDisplay[i].ProductName %>"
+                        class="w-full h-48 object-cover bg-gray-200"
+                    >
+
+                    <div class="p-5">
+
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            <%= productstoDisplay[i].ProductName %>
+                        </h2>
+
+                        <p class="text-sm text-gray-500 mt-2">
+                            <%= productstoDisplay[i].ProductDescription %>
+                        </p>
+
+                        <p class="text-xl font-bold text-gray-900 mt-4">
+                            ₹<%= productstoDisplay[i].ProductPrice %>
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-3 mt-5">
+
+                            <form action="/api/products/edit" method="post" class="flex-1">
+                                <input type="hidden" name="productId"
+                                       value="<%= productstoDisplay[i]._id %>">
+
+                                <button type="submit"
+                                        class="w-full bg-blue-600 text-white py-2 rounded-md text-sm hover:bg-blue-700 transition">
+                                    Edit
+                                </button>
+                            </form>
+
+                            <form action="/api/products/delete" method="post" class="flex-1"
+                                  onsubmit="return confirm('Are you sure you want to delete this product?')">
+
+                                <input type="hidden" name="productId"
+                                       value="<%= productstoDisplay[i]._id %>">
+
+                                <button type="submit"
+                                        class="w-full bg-red-600 text-white py-2 rounded-md text-sm hover:bg-red-700 transition">
+                                    Delete
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+    <% } %>
+
+</div>
+
+
+</body>
+</html>
